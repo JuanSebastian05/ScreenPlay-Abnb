@@ -1,0 +1,55 @@
+apply plugin: 'java-library'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:4.0.46"
+    }
+}
+
+dependencies {
+    // Serenity BDD
+    implementation "net.serenity-bdd:serenity-core:4.0.46"
+    implementation "net.serenity-bdd:serenity-junit:4.0.46"
+    implementation "net.serenity-bdd:serenity-screenplay:4.0.46"
+    implementation "net.serenity-bdd:serenity-cucumber:4.0.46"
+    implementation "net.serenity-bdd:serenity-ensure:4.0.46"
+
+    // Selenium (última estable)
+    implementation "org.seleniumhq.selenium:selenium-java:4.21.0"
+
+    // WebDriverManager (para Chrome 140+)
+    implementation "io.github.bonigarcia:webdrivermanager:5.9.2"
+
+    // JUnit 5
+    implementation "org.junit.jupiter:junit-jupiter-api:5.10.2"
+    implementation "org.junit.jupiter:junit-jupiter-engine:5.10.2"
+
+    // Utilidades
+    implementation "org.assertj:assertj-core:3.25.3"
+    implementation "org.slf4j:slf4j-simple:2.0.9"
+
+    // Apache POI (Excel)
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.2.5'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.5'
+}
+
+test {
+    ignoreFailures = true
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+gradle.startParameter.continueOnFailure = true
