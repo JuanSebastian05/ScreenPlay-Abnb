@@ -8,7 +8,7 @@ Feature: Cómo usuario de la página Airbnb quiero probar la reserva de un aloja
     And el usuario aplica el filtro de precio máximo de 1500000 por noche
     And el usuario aplica el filtro de comodidades seleccionando "Aire acondicionado", "Cocina" y "Lavadora"
     And el usuario realiza la busqueda con los filtros aplicados
+    Then debería mostrarse una lista de alojamientos que incluya al menos un resultado que cumpla con los criterios especificados
     And el usuario selecciona el primer resultado de la búsqueda
     And el usuario extrae el nombre, precio y anfitrion del alojamiento seleccionado
     And el usuario guarda los datos extraídos en un archivo de Excel
-    Then debería mostrarse una lista de alojamientos que incluya al menos un resultado que cumpla con los criterios especificados

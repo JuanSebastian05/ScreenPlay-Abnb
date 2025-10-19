@@ -51,4 +51,7 @@ public class HomePageUI {
     public static final Target RESULTADO_ALOJAMIENTO = Target.the("El ´rimer alojamiento que hay").
             located(By.xpath("(//*[@data-testid='card-container'])[1]"));
 
+    public static final Target LBL_NUMERO_ALOJAMIENTOS = Target.the("Etiqueta que muestra el numero de alojamientos encontrados").
+            located(By.xpath("//span[@data-testid='stays-page-heading']"));
+
 }

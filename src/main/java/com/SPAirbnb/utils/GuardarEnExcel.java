@@ -18,9 +18,7 @@ public class GuardarEnExcel {
     private static final String DEFAULT_RELATIVE_DIR = "src/test/resources/data";
     private static final String DEFAULT_FILENAME = "infoAlojamientos.xlsx";
 
-    /**
-     * Conveniencia: crea la carpeta dentro del proyecto si hace falta y escribe los datos.
-     */
+
     public static void guardarDetallesEnExcel(Actor actor) {
         Path outputDir = Paths.get(System.getProperty("user.dir")).resolve(DEFAULT_RELATIVE_DIR);
         try {
@@ -32,19 +30,14 @@ public class GuardarEnExcel {
         guardarDetallesEnExcel(actor, filePath.toString());
     }
 
-    /**
-     * Método principal: escribe o agrega una fila en el archivo indicado.
-     *
-     * @param actor      actor con los valores en memoria
-     * @param rutaArchivo ruta completa del archivo .xlsx
-     */
+
     public static void guardarDetallesEnExcel(Actor actor, String rutaArchivo) {
         String titulo = safeRecall(actor, "tituloAlojamiento");
         String anfitrion = safeRecall(actor, "nombreAnfitrion");
         String precio = safeRecall(actor, "precioAlojamiento");
 
         File file = new File(rutaArchivo);
-        // Asegurar que exista la carpeta padre
+
         File parent = file.getParentFile();
         if (parent != null && !parent.exists()) {
             if (!parent.mkdirs()) {

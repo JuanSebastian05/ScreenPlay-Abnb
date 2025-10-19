@@ -15,6 +15,6 @@ public class DetallesAlojamientoUI {
             located(By.xpath("(//div[contains(text(), 'Anfitrión')])"));
 
     public static Target PRECIO_ALOJAMIENTO = Target.the("Precio del alojamiento").
-            located(By.xpath("(//*[contains(text(), 'COP')])[1]"));
+            located(By.xpath("(//div[@data-section-id='BOOK_IT_SIDEBAR']//span[contains(text(), 'COP')])[1]"));
 
 }

@@ -36,10 +36,8 @@ public class ExtraerDetallesAlojamientoTask implements Task {
                 );
             }
         } catch (Exception ignored) {
-            // Si no existe o no se puede resolver, continuar
         }
 
-        // Esperar título y también anfitrión y precio antes de leerlos
         actor.attemptsTo(
                 WaitUntil.the(TITULO_ALOJAMIENTO, isVisible()).forNoMoreThan(10).seconds(),
                 WaitUntil.the(NOMBRE_ANFITRION, isVisible()).forNoMoreThan(10).seconds(),
@@ -50,7 +48,6 @@ public class ExtraerDetallesAlojamientoTask implements Task {
         String anfitrionRaw = Text.of(NOMBRE_ANFITRION).answeredBy(actor);
         String precio = Text.of(PRECIO_ALOJAMIENTO).answeredBy(actor);
 
-        // Regex más flexible: acepta "Anfitrión", "Anfitrión:", "Anfitrión·", "Anfitrión -", etc.
         String anfitrion = anfitrionRaw.replaceFirst("(?i)Anfitri[oó]n\\s*[:·\\-]?\\s*", "").trim();
 
         actor.remember("tituloAlojamiento", titulo);

@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import com.SPAirbnb.interactions.*;
+import com.SPAirbnb.questions.ValidacionNumeroAlojamientos;
 import com.SPAirbnb.tasks.*;
 import com.SPAirbnb.utils.GuardarEnExcel;
 import io.cucumber.java.Before;
@@ -8,9 +9,14 @@ import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static com.SPAirbnb.userInterfaces.HomePageUI.LBL_NUMERO_ALOJAMIENTOS;
+import static com.SPAirbnb.userInterfaces.HomePageUI.RESULTADO_ALOJAMIENTO;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ReservaStepDefinition {
 
@@ -76,6 +82,13 @@ public class ReservaStepDefinition {
         );
     }
 
+    @Then("debería mostrarse una lista de alojamientos que incluya al menos un resultado que cumpla con los criterios especificados")
+    public void deberíaMostrarseUnaListaDeAlojamientosQueIncluyaAlMenosUnResultadoQueCumplaConLosCriteriosEspecificados() {
+        OnStage.theActorInTheSpotlight().should(
+                seeThat(ValidacionNumeroAlojamientos.validacionLabel(LBL_NUMERO_ALOJAMIENTOS))
+        );
+    }
+
     @When("el usuario selecciona el primer resultado de la búsqueda")
     public void elUsuarioSeleccionaElPrimerResultadoDeLaBúsqueda() {
         OnStage.theActorInTheSpotlight().attemptsTo(
@@ -94,11 +107,6 @@ public class ReservaStepDefinition {
     public void elUsuarioGuardaLosDatosExtraídosEnUnArchivoDeExcel() {
         Actor actor = OnStage.theActorInTheSpotlight();
         GuardarEnExcel.guardarDetallesEnExcel(actor);
-    }
-
-    @Then("debería mostrarse una lista de alojamientos que incluya al menos un resultado que cumpla con los criterios especificados")
-    public void deberíaMostrarseUnaListaDeAlojamientosQueIncluyaAlMenosUnResultadoQueCumplaConLosCriteriosEspecificados() {
-
     }
 
 }
