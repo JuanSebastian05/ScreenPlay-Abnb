@@ -1,11 +1,11 @@
 package stepDefinitions;
 
-import com.SPAirbnb.interactions.BuscarDestino;
-import com.SPAirbnb.tasks.AbrirNavegadorTask;
-import com.SPAirbnb.tasks.NumeroDeHuespedes;
-import com.SPAirbnb.tasks.SeleccionarFechasTask;
+import com.SPAirbnb.interactions.*;
+import com.SPAirbnb.tasks.*;
+import com.SPAirbnb.utils.GuardarEnExcel;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
+import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
@@ -39,35 +39,66 @@ public class ReservaStepDefinition {
                 SeleccionarFechasTask.seleccionarFechas(dias)
         );
     }
+
     @When("el usuario aplica el filtro de huéspedes con {int} adultos, {int} niño y {int} mascota")
     public void elUsuarioAplicaElFiltroDeHuéspedesConAdultosNiñoYMascota(Integer adultos, Integer ninos, Integer mascotas) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                NumeroDeHuespedes.numeroDeHuespedes(adultos, ninos, mascotas)
+                NumeroDeHuespedesTask.numeroDeHuespedes(adultos, ninos, mascotas)
         );
     }
+
     @When("el usuario realiza la busqueda inicial")
     public void elUsuarioRealizaLaBusquedaInicial() {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                ClickEnBuscar.clickEnBuscar()
+        );
     }
+
     @When("el usuario aplica el filtro de precio máximo de {int} por noche")
-    public void elUsuarioAplicaElFiltroDePrecioMáximoDePorNoche(Integer int1) {
+    public void elUsuarioAplicaElFiltroDePrecioMáximoDePorNoche(Integer precio) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                CerrarPopUp.cerrarPopUp(),
+                FiltrarPrecioMaxTask.filtrarPrecioMax(precio)
+        );
     }
+
     @When("el usuario aplica el filtro de comodidades seleccionando {string}, {string} y {string}")
     public void elUsuarioAplicaElFiltroDeComodidadesSeleccionandoY(String string, String string2, String string3) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                AplicarFiltrosTask.aplicarFiltros(string, string2, string3)
+        );
     }
+
     @When("el usuario realiza la busqueda con los filtros aplicados")
     public void elUsuarioRealizaLaBusquedaConLosFiltrosAplicados() {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                ClickEnAplicarFiltros.aplicarFiltros()
+        );
     }
+
     @When("el usuario selecciona el primer resultado de la búsqueda")
     public void elUsuarioSeleccionaElPrimerResultadoDeLaBúsqueda() {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                ElegirAlojamiento.elegirAlojamiento()
+        );
     }
+
     @When("el usuario extrae el nombre, precio y anfitrion del alojamiento seleccionado")
     public void elUsuarioExtraeElNombrePrecioYAnfitrionDelAlojamientoSeleccionado() {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                ExtraerDetallesAlojamientoTask.extraerDetallesAlojamiento()
+        );
     }
+
     @When("el usuario guarda los datos extraídos en un archivo de Excel")
     public void elUsuarioGuardaLosDatosExtraídosEnUnArchivoDeExcel() {
+        Actor actor = OnStage.theActorInTheSpotlight();
+        GuardarEnExcel.guardarDetallesEnExcel(actor);
     }
+
     @Then("debería mostrarse una lista de alojamientos que incluya al menos un resultado que cumpla con los criterios especificados")
     public void deberíaMostrarseUnaListaDeAlojamientosQueIncluyaAlMenosUnResultadoQueCumplaConLosCriteriosEspecificados() {
+
     }
 
 }

@@ -1,35 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Cómo usuario de la página Airbnb quiero probar la reserva de un alojamiento" skipped="0" tests="1" time="130.05" timestamp="2025-10-17 10:02:28"><testcase name="reservar un alojamiento usando filtros en la pagina Airbnb"><error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@placeholder='Explora destinos']&quot;}&#10;  (Session info: chrome=141.0.7390.108)&#10;For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Build info: version: '4.21.0', revision: '79ed462ef4'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.28'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [bd66315846201f02123340ba6720f3c4, findElement {value=//input[@placeholder='Explora destinos'], using=xpath}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\jsnar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59892}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59892/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: bd66315846201f02123340ba6720f3c4" type="org.openqa.selenium.NoSuchElementException">no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Explora destinos']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.28'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bd66315846201f02123340ba6720f3c4, findElement {value=//input[@placeholder='Explora destinos'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\jsnar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59892}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59892/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: bd66315846201f02123340ba6720f3c4</error><system-err>no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Explora destinos']"}
-  (Session info: chrome=141.0.7390.108)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.28'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bd66315846201f02123340ba6720f3c4, findElement {value=//input[@placeholder='Explora destinos'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 141.0.7390.108, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\jsnar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59892}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59892/devtoo..., se:cdpVersion: 141.0.7390.108, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: bd66315846201f02123340ba6720f3c4&#13;
-net.thucydides.core.webdriver.WebDriverFacade.findElement(WebDriverFacade.java:259)&#13;
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Cómo usuario de la página Airbnb quiero probar la reserva de un alojamiento" skipped="0" tests="1" time="71.8" timestamp="2025-10-19 12:15:58"><testcase name="reservar un alojamiento usando filtros en la pagina Airbnb"><failure message="&#13;&#10;Expected: an element that is visible&#13;&#10;     but: no matching element found by [[ChromeDriver: chrome on windows (5e64655c93cc43b807970166a9f75c4b)] -&gt; xpath: (//*[contains(text(), 'COP')])[1]]" type="java.lang.AssertionError">&#13;
+Expected: an element that is visible&#13;
+     but: no matching element found by [[ChromeDriver: chrome on windows (5e64655c93cc43b807970166a9f75c4b)] -&gt; xpath: (//*[contains(text(), 'COP')])[1]]</failure><system-err>&#13;
+Expected: an element that is visible&#13;
+     but: no matching element found by [[ChromeDriver: chrome on windows (5e64655c93cc43b807970166a9f75c4b)] -&gt; xpath: (//*[contains(text(), 'COP')])[1]]&#13;
+com.SPAirbnb.tasks.ExtraerDetallesAlojamientoTask.performAs(ExtraerDetallesAlojamientoTask.java:43)&#13;
 net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:523)&#13;
 net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:503)&#13;
 net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:475)&#13;
 net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:217)&#13;
 net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:204)&#13;
 net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:92)&#13;
-com.SPAirbnb.interactions.BuscarDestino.performAs(BuscarDestino.java:24)&#13;
-net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:523)&#13;
-net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:503)&#13;
-net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:475)&#13;
-net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:217)&#13;
-net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:204)&#13;
-net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:92)&#13;
-stepDefinitions.ReservaStepDefinition.elUsuarioIngresaComoDestino(ReservaStepDefinition.java:31)&#13;
+stepDefinitions.ReservaStepDefinition.elUsuarioExtraeElNombrePrecioYAnfitrionDelAlojamientoSeleccionado(ReservaStepDefinition.java:88)&#13;
 io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
 io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
 io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;

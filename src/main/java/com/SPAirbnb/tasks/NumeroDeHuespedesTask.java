@@ -7,13 +7,13 @@ import net.serenitybdd.screenplay.actions.Click;
 import static com.SPAirbnb.userInterfaces.HomePageUI.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class NumeroDeHuespedes implements Task {
+public class NumeroDeHuespedesTask implements Task {
 
     private final int adultos;
     private final int ninos;
     private final int mascotas;
 
-    public NumeroDeHuespedes(int adultos, int ninos, int mascotas) {
+    public NumeroDeHuespedesTask(int adultos, int ninos, int mascotas) {
         this.adultos = adultos;
         this.ninos = ninos;
         this.mascotas = mascotas;
@@ -41,10 +41,8 @@ public class NumeroDeHuespedes implements Task {
                     Click.on(BTN_INCREMENTAR_MASCOTAS)
             );
         }
-        actor.attemptsTo(
-                Click.on(BTN_BUSCAR));
     }
-    public static NumeroDeHuespedes numeroDeHuespedes(int adultos, int ninos, int mascotas){
-        return instrumented(NumeroDeHuespedes.class, adultos, ninos, mascotas);
+    public static NumeroDeHuespedesTask numeroDeHuespedes(int adultos, int ninos, int mascotas){
+        return instrumented(NumeroDeHuespedesTask.class, adultos, ninos, mascotas);
     }
 }
