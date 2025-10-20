@@ -9,14 +9,11 @@ import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static com.SPAirbnb.userInterfaces.HomePageUI.LBL_NUMERO_ALOJAMIENTOS;
-import static com.SPAirbnb.userInterfaces.HomePageUI.RESULTADO_ALOJAMIENTO;
+import static com.SPAirbnb.userInterfaces.HomePageUI.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ReservaStepDefinition {
 
@@ -56,7 +53,7 @@ public class ReservaStepDefinition {
     @When("el usuario realiza la busqueda inicial")
     public void elUsuarioRealizaLaBusquedaInicial() {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                ClickEnBuscar.clickEnBuscar()
+                ClickElemento.en(BTN_BUSCAR)
         );
     }
 
@@ -69,16 +66,16 @@ public class ReservaStepDefinition {
     }
 
     @When("el usuario aplica el filtro de comodidades seleccionando {string}, {string} y {string}")
-    public void elUsuarioAplicaElFiltroDeComodidadesSeleccionandoY(String string, String string2, String string3) {
+    public void elUsuarioAplicaElFiltroDeComodidadesSeleccionandoY(String filtro1, String filtro2, String filtro3) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                AplicarFiltrosTask.aplicarFiltros(string, string2, string3)
+                AplicarFiltrosTask.aplicarFiltros(filtro1, filtro2, filtro3)
         );
     }
 
     @When("el usuario realiza la busqueda con los filtros aplicados")
     public void elUsuarioRealizaLaBusquedaConLosFiltrosAplicados() {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                ClickEnAplicarFiltros.aplicarFiltros()
+                ClickElemento.en(BTN_APLICAR_FILTROS)
         );
     }
 
@@ -92,7 +89,7 @@ public class ReservaStepDefinition {
     @When("el usuario selecciona el primer resultado de la búsqueda")
     public void elUsuarioSeleccionaElPrimerResultadoDeLaBúsqueda() {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                ElegirAlojamiento.elegirAlojamiento()
+                ClickElemento.en(RESULTADO_ALOJAMIENTO)
         );
     }
 
